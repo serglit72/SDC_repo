@@ -1,0 +1,40 @@
+Finding Lane Lines on the Road
+
+
+The goals / steps of this project are the following:
+
+Make a pipeline that finds lane lines on the road
+Reflect on your work in a written report
+Reflection
+
+1. Description:
+
+My pipeline consisted of 5 steps.
+1. I converted the image to grayscale, apply Gaussian smoothing, Canny algorithme and apply it for the image
+2. I define the Hough transform parameters and run Hough on edge detected image 
+3. I create a "color" binary image to combine with line image
+4. Then I use video file and capture an every single frame in order to proceed it using p.1-p.3 as a function calls Process_image
+5. Finally I concatinate two arrays in one and rewrite the video file
+
+
+
+In order to draw a single line on the left and right lanes, I  should modifie the draw_lines() function .
+
+If you'd like to include images to show how the pipeline works, here is how to include an image:
+
+
+2. Identify potential shortcomings with your current pipeline
+
+One potential shortcoming would be what would happen when:
+1.line is curve 
+2.line is invisible or not so bright
+3.multiple line intersection is difficult to recognize 
+
+
+Another shortcoming could be ...
+
+3. Suggest possible improvements to your pipeline
+
+A possible improvement would be to ...
+
+Another potential improvement could be to ...
