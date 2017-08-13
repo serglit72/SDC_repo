@@ -28,13 +28,14 @@ If you'd like to include images to show how the pipeline works, here is how to i
 One potential shortcoming would be what would happen when:
 1.line is curve 
 2.line is invisible or not so bright
-3.multiple line intersection is difficult to recognize 
+3.multiple line intersection is difficult to be recognized 
+4. road has being repairing or temporary does not have any line 
+5. no lines at all
 
 
-Another shortcoming could be ...
 
 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to keeping line even some gap or dirt on the road 
 
-Another potential improvement could be to ...
+
