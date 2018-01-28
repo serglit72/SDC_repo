@@ -1,0 +1,15 @@
+Extended Kalman Filter
+
+The main goal of the project is to apply Extended Kalman Filter to fuse data from LIDAR and Radar sensors of a self driving car using C++.
+
+I used the Udacity Starter Code.
+
+Content of this repo
+
+"scr" a directory with the project code:
+"main.cpp" - reads in data, calls a function to run the Kalman filter, calls a function to calculate RMSE
+"FusionEKF.cpp" - initializes the filter, calls the predict function, calls the update function
+"kalman_filter.cpp"- defines the predict function, the update function for lidar, and the update function for radar
+"tools.cpp" - is a function to calculate RMSE and the Jacobian matrix
+"data" is a directory with two input and output files, 
+"Docs" a directory with files formats description
