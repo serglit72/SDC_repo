@@ -26,7 +26,7 @@ The objective is to find the acceleration (a) and the steering angle(delta) in t
 
 #### Timestep Length and Elapsed Duration (N & dt)
 The number of points(N) and the time interval(dt) define the prediction horizon. The number of points impacts the controller performance as well. I tried to keep the horizon around the same time the waypoints were on the simulator. With too many points the controller starts to run slower, and some times it went wild very easily. After trying with N from 10 to 20 and dt 100 to 500 milliseconds, I decided to leave them fixed  100  to have a better result tuning the other parameters. Also I tried to adjust the  options for **IPOPT **solver and  reached the speed about 60 mph.
-
+![Model Predictive Control](Images/Image2.png)<br />
 #### Polynomial Fitting and MPC Preprocessing
 The waypoints provided by the simulator are transformed to the car coordinate system at ./src/main.cpp .
 Then a 3rd-degree polynomial is fitted to the transformed waypoints. These polynomial coefficients are used to calculate the cte and epsi later on.
@@ -34,7 +34,7 @@ They are used by the solver as well to create a reference trajectory.
 
 #### Model Predictive Control with Latency
 To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one.---
-![Model Predictive Control](Images/image2.png)<br />
+
 ![MPC&PID](Images/image3.png)
 ## Dependencies
 
