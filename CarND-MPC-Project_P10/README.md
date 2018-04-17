@@ -7,20 +7,20 @@ Self-Driving Car Engineer Nanodegree Program
 
 #### The model  INPUT :
 
->**x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt ____________________________ x, y : Car's position.** <br />
->**y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt______________________________x, y : Car's position.**<br />
->**psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt ________________________psi : Car's heading direction.**<br />
->**v[t] = v[t-1] + a[t-1] * dt___________________________________________v : Car's velocity.**<br />
->**cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt__________________cte : Cross-track error.**<br />
-> **epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt_____________epsi : Orientation error**<br />
+>**x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt ______________________________ x, y : Car's position.** <br />
+>**y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt________________________________x, y : Car's position.**<br />
+>**psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt _________________________psi : Car's heading direction.**<br />
+>**v[t] = v[t-1] + a[t-1] * dt________________________________________________v : Car's velocity.**<br />
+>**cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt_________________cte : Cross-track error.**<br />
+> **epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt____________epsi : Orientation error**<br />
 **Lf : the distance between the car of mass and the front wheels (this is provided by Udacity's seed project).**<br />
 
 Those values are considered the **state** of the model.
 
 #### The model output:
 
-**a ** : Car's acceleration (throttle).
-**delta ** : Steering angle.
+**a** : Car's acceleration (throttle).
+**delta** : Steering angle.
 The objective is to find the acceleration (a) and the steering angle(delta) in the way it will minimize an objective function that is the combination of different factors:
 
 
