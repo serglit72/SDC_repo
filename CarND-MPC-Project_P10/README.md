@@ -2,26 +2,30 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ## Implementation
-### The Model
-#### The model  INPUT : is a Kinematic model neglecting the complex interactions between the tires and the road.
+### The Model is a Kinematic model neglecting the complex interactions between the tires and the road.
+![Simulator](/Images/mpc-vid2.gif)
 
-x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt                                        //   x, y : Car's position.
-y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt                                         //  psi : Car's heading direction.
-psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt                                //  v : Car's velocity.
-v[t] = v[t-1] + a[t-1] * dt                                                             // cte : Cross-track error.
-cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt                     // epsi : Orientation error
-epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt              //  Lf : the distance between the car of mass and the front wheels (this is provided by Udacity's seed project).
-                                                                                                    // Those values are considered the state of the model.
+#### The model  INPUT :
+
+>**x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt ____________________________ x, y : Car's position.**
+>**y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt______________________________x, y : Car's position.**
+>**psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt ________________________psi : Car's heading direction.**
+>**v[t] = v[t-1] + a[t-1] * dt___________________________________________v : Car's velocity.**
+>**cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt__________________cte : Cross-track error.**
+> **epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt_____________epsi : Orientation error**
+**Lf : the distance between the car of mass and the front wheels (this is provided by Udacity's seed project).**
+
+Those values are considered the **state** of the model.
 
 #### The model output:
 
-a : Car's acceleration (throttle).
-delta : Steering angle.
+**a ** : Car's acceleration (throttle).
+**delta ** : Steering angle.
 The objective is to find the acceleration (a) and the steering angle(delta) in the way it will minimize an objective function that is the combination of different factors:
 
 
 #### Timestep Length and Elapsed Duration (N & dt)
-The number of points(N) and the time interval(dt) define the prediction horizon. The number of points impacts the controller performance as well. I tried to keep the horizon around the same time the waypoints were on the simulator. With too many points the controller starts to run slower, and some times it went wild very easily. After trying with N from 10 to 20 and dt 100 to 500 milliseconds, I decided to leave them fixed  100  to have a better result tuning the other parameters. Also I tried to adjust the  options for IPOPT solver and  reached the speed about 60 mph.
+The number of points(N) and the time interval(dt) define the prediction horizon. The number of points impacts the controller performance as well. I tried to keep the horizon around the same time the waypoints were on the simulator. With too many points the controller starts to run slower, and some times it went wild very easily. After trying with N from 10 to 20 and dt 100 to 500 milliseconds, I decided to leave them fixed  100  to have a better result tuning the other parameters. Also I tried to adjust the  options for **IPOPT **solver and  reached the speed about 60 mph.
 
 #### Polynomial Fitting and MPC Preprocessing
 The waypoints provided by the simulator are transformed to the car coordinate system at ./src/main.cpp .
@@ -30,7 +34,8 @@ They are used by the solver as well to create a reference trajectory.
 
 #### Model Predictive Control with Latency
 To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one.---
-
+![Model Predictive Control](/Images/image2.jpeg)
+![MPC&PID](/Images/image3.jpeg)
 ## Dependencies
 
 * cmake >= 3.5
