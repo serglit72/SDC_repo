@@ -7,13 +7,13 @@ Self-Driving Car Engineer Nanodegree Program
 
 #### The model  INPUT :
 
->**x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt ____________________________ x, y : Car's position.**
->**y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt______________________________x, y : Car's position.**
->**psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt ________________________psi : Car's heading direction.**
->**v[t] = v[t-1] + a[t-1] * dt___________________________________________v : Car's velocity.**
->**cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt__________________cte : Cross-track error.**
-> **epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt_____________epsi : Orientation error**
-**Lf : the distance between the car of mass and the front wheels (this is provided by Udacity's seed project).**
+>**x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt ____________________________ x, y : Car's position.** <br />
+>**y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt______________________________x, y : Car's position.**<br />
+>**psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt ________________________psi : Car's heading direction.**<br />
+>**v[t] = v[t-1] + a[t-1] * dt___________________________________________v : Car's velocity.**<br />
+>**cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt__________________cte : Cross-track error.**<br />
+> **epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt_____________epsi : Orientation error**<br />
+**Lf : the distance between the car of mass and the front wheels (this is provided by Udacity's seed project).**<br />
 
 Those values are considered the **state** of the model.
 
@@ -34,7 +34,7 @@ They are used by the solver as well to create a reference trajectory.
 
 #### Model Predictive Control with Latency
 To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one.---
-![Model Predictive Control](/Images/image2.jpeg)
+![Model Predictive Control](/Images/image2.jpeg)<br />
 ![MPC&PID](/Images/image3.jpeg)
 ## Dependencies
 
