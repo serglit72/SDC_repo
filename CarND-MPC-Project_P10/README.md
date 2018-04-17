@@ -19,8 +19,8 @@ Those values are considered the **state** of the model.
 
 #### The model output:
 
-**a** : Car's acceleration (throttle).
-**delta** : Steering angle.
+**a** : Car's acceleration (throttle).<br />
+**delta** : Steering angle.<br />
 The objective is to find the acceleration (a) and the steering angle(delta) in the way it will minimize an objective function that is the combination of different factors:
 
 
