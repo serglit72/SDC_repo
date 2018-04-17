@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Implementation
 ### The Model is a Kinematic model neglecting the complex interactions between the tires and the road.
-![Simulator](/Images/mpc-vid2.gif)
+![Simulator](Images/mpc-vid2.gif)
 
 #### The model  INPUT :
 
@@ -34,8 +34,8 @@ They are used by the solver as well to create a reference trajectory.
 
 #### Model Predictive Control with Latency
 To handle actuator latency, the state values are calculated using the model and the delay interval. These values are used instead of the initial one.---
-![Model Predictive Control](/Images/image2.jpeg)<br />
-![MPC&PID](/Images/image3.jpeg)
+![Model Predictive Control](Images/image2.png)<br />
+![MPC&PID](Images/image3.png)
 ## Dependencies
 
 * cmake >= 3.5
